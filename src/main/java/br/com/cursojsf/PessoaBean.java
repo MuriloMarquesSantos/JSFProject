@@ -2,10 +2,10 @@ package br.com.cursojsf;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean(name = "pessoaBean")
+@ManagedBean(name="pessoaBean")
 public class PessoaBean {
 
-	private String nome;
+	private String nome = "Murilo";
 	private String sobrenome;
 	public String getNome() {
 		return nome;
