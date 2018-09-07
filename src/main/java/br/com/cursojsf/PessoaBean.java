@@ -1,15 +1,17 @@
 package br.com.cursojsf;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean(name = "pessoaBean")
+@RequestScoped
 public class PessoaBean {
 
 	private String nome;
 	private String sobrenome;
 	private String nomeCompleto;
 	
-	public void mostrarNome(){
+	public void addNome(){
 		nomeCompleto = nome + " " + sobrenome;
 	}
 
