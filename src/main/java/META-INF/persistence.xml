@@ -6,7 +6,7 @@
 		<class>br.com.entidades.Pessoa</class>
 		
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5423/meuprimeiroprojetojsf"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/meuprimeiroprojetojsf"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
 			<property name="javax.persistence.jdbc.password" value="admin"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
