@@ -9,16 +9,19 @@
 <h:body>
 	<h1>Formulário Padrão</h1>
 	<h:form>
-		Nome: <h:inputText id="campoNome" value="#{pessoaBean.nome}" />
+		<h:outputLabel value="Nome:"/>
+		<h:inputText value="#{pessoaBean.pessoa.nome}"/>
 		
-		<h:commandButton binding="#{pessoaBean.commandButton}"
-		value="Adicionar Nome" action="#{pessoaBean.addNome}"/>
+		<br/>
+		<h:outputLabel value="Sobrenome:"/>
+		<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/>
 		
-		<h:dataTable value="#{pessoaBean.nomes}" var="nome">
-			<h:column>
-				<h:outputText value="#{nome}"/>			
-			</h:column>
-		</h:dataTable>
+		<br/>
+		<h:outputLabel value="Idade:"/>
+		<h:inputText value="#{pessoaBean.pessoa.idade}"/>
+	
+		
+		<h:commandButton value="salvar" action="#{pessoaBean.salvar}"/>
 	</h:form>
 </h:body>
 

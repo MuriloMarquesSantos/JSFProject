@@ -1,56 +1,31 @@
 package br.com.cursojsf;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.component.html.HtmlCommandButton;
+
+import br.com.dao.DaoGeneric;
+import br.com.entidades.Pessoa;
 
 @ViewScoped
 @ManagedBean(name = "pessoaBean")
 public class PessoaBean {
 
-	private String nome;
+	private Pessoa pessoa = new Pessoa();
+	private DaoGeneric<Pessoa> daoGeneric = new DaoGeneric<Pessoa>();
 
-	private List<String> nomes = new ArrayList<String>();
-	
-	private HtmlCommandButton commandButton;
-
-	
-	public HtmlCommandButton getCommandButton(){
-		return this.commandButton;
-	}
-	
-	public void setCommandButton(HtmlCommandButton commandButton){
-		this.commandButton = commandButton;
-	}
-	
-	public String addNome() {
-		nomes.add(nome);
-		
-		if (nomes.size() > 3){
-			commandButton.setDisabled(true);
-			return "paginanavegada?faces-redirect=true";
-		}
+	public String salvar() {
+		daoGeneric.salvar(pessoa);
 		
 		return "";
 	}
 
-	public List<String> getNomes() {
-		return nomes;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
-	public void setNomes(List<String> nomes) {
-		this.nomes = nomes;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
+	
+	
 }
