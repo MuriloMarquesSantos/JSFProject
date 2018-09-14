@@ -9,6 +9,11 @@
 <h:body>
 	<h1>Formulário Padrão</h1>
 	<h:form>
+		
+		<h:outputLabel value="id: "/>
+		<h:inputText value ="#{pessoaBean.pessoa.id}" readonly="true"/>
+		
+		<br/>	
 		<h:outputLabel value="Nome:"/>
 		<h:inputText value="#{pessoaBean.pessoa.nome}"/>
 		
@@ -19,9 +24,29 @@
 		<br/>
 		<h:outputLabel value="Idade:"/>
 		<h:inputText value="#{pessoaBean.pessoa.idade}"/>
-	
 		
-		<h:commandButton value="salvar" action="#{pessoaBean.salvar}"/>
+		<br/>	
+		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"/>
+		<h:commandButton value="Novo" action="#{pessoaBean.novo}"/>
+		
+		<h:commandButton value="Remove" action="#{pessoaBean.remove}"/>
+		
+		<br/>
+		<br/>
+		
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+			<h:column headerClass="id">
+				<h:outputText value="#{pessoa.id}"/>			
+			</h:column>
+			<h:column>
+				<h:outputText value="#{pessoa.nome}"/>			
+			</h:column>
+			<h:column>
+				<h:outputText value="#{pessoa.sobrenome}"/>
+			</h:column>
+			
+			
+		</h:dataTable>
 	</h:form>
 </h:body>
 
