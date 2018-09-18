@@ -18,36 +18,53 @@ public class Pessoa implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String nome;
-	
+
 	private String sobrenome;
-	
+
 	private Integer idade;
-	
+
 	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
-	
+
 	private String sexo;
-	
-	public Pessoa(){
-		
+
+	private String[] frameworks;
+
+	private Boolean ativo;
+
+	public Pessoa() {
+
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public String[] getFrameworks() {
+		return frameworks;
+	}
+
+	public void setFrameworks(String[] frameworks) {
+		this.frameworks = frameworks;
 	}
 
 	public String getSexo() {
 		return sexo;
 	}
 
-
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
 
 	public Long getId() {
 		return id;
@@ -113,10 +130,5 @@ public class Pessoa implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
+
 }
