@@ -37,6 +37,16 @@ public class Pessoa implements Serializable {
 	private String login;
 
 	private String senha;
+	
+	private String perfilUser;
+	
+	public void setPerfilUser(String perfilUser) {
+		this.perfilUser = perfilUser;
+	}
+	
+	public String getPerfilUser() {
+		return perfilUser;
+	}
 
 	public Pessoa() {
 
